@@ -1,0 +1,18 @@
+.icon {
+    width: 100px;
+    height: 100px;
+}
+body {
+    background: rgb(245, 151, 64);
+}
+#content {
+    display: flex;
+    width: 75%;
+    background: lemonchiffon;
+    justify-content: center;
+}
+.border-1 {
+    max-width: 300px;
+    border: 5px solid rgb(245, 83, 54);
+    
+}
