@@ -1,3 +1,5 @@
+import { createElement } from "./createDoc";
+
 const infos = { 
     'Hours' : {
         'Sunday' : {
@@ -45,25 +47,15 @@ const review = [
 ]
 
 function createMainPage() {
-    const ctn = document.createElement('div');
-    ctn.className = 'Mainpage';
-
+    const ctn = createElement('div', 'mainpage', '');
     for (let info in infos) {
-        const div = document.createElement('div');
-        div.className = `${info} border-1`;
-        const h2 = document.createElement('h2');
-        h2.textContent = `${info}`
-        div.appendChild(h2);
+        const div = createElement('div', `${info} border-1`, createElement('h1', `main`, `${info}`) ,true);
 
         if (info === 'Location') {
-            const p = document.createElement('p');
-            p.textContent = `${infos['Location']['street']}, ${infos['Location']['city']}, ${infos['Location']['zipcode']}`;
-            div.appendChild(p);
+            div.appendChild(createElement('p', `${info}`, `${infos['Location']['street']}, ${infos['Location']['city']}, ${infos['Location']['zipcode']}`));
         } else {
             for (let day in infos[info]) {
-                const li = document.createElement('li');
-                li.textContent = `${day} : Open ${infos[info][day]['open']} until ${infos[info][day]['close']}`
-                div.appendChild(li);
+                div.appendChild(createElement('li', `${day}`, `${day} : Open ${infos[info][day]['open']} until ${infos[info][day]['close']}` ));
             }
         }
         ctn.appendChild(div);

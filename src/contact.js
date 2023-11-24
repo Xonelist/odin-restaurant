@@ -1,3 +1,4 @@
+import { createElement } from "./createDoc";
 const contacts = [
     {
         "name": 'Mr Ian',
@@ -20,32 +21,20 @@ const contacts = [
 ]
 function createContact() {
 
-    const ctn = document.createElement('div');
-    ctn.className = 'contacts';
+    const ctn = createElement('div', 'contacts', '');
     contacts.forEach( contact => {
-        const content = document.createElement('div');
-        content.className = `worker border-1`
+        const content = createElement('div', 'worker border-1', '');
         for (let key in contact) {
-            console.log(key)
-            const people = document.createElement('div');
+            //console.log(key)
             if (key === 'name') {
-                const textC = document.createElement('h2');
-                textC.textContent = `${contact[key]}`;
-                people.appendChild(textC);
+                content.appendChild(createElement('h2', `main ${key}`, `${contact[key]}`));
             } else {
-                const textC = document.createElement('p');
-                textC.textContent = `${contact[key]}`;
-                people.appendChild(textC);
-            }
-            content.appendChild(people);
+                content.appendChild(createElement('p', `${key}`, `${contact[key]}`));
+            }   
         }
         ctn.appendChild(content);
     })
     return ctn;
-}
-
-function component() {
-    return document.createElement('div');
 }
 
 export {createContact} 

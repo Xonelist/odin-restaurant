@@ -1,18 +1,110 @@
+@font-face {
+    font-family: nav-font;
+    src: url('./img/VinaSans-Regular.ttf');
+}
+
+:root {
+    --red: #e4181b;
+    --red-hover: #c70d0f;
+    --orange-border: #ff9a00;
+    --main-content:	#ffce00;
+    --main-nav: #f29507;
+
+}
+#header {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    background-color: var(--main-nav);
+}
+h1 {
+    margin: 0;
+}
 .icon {
     width: 100px;
     height: 100px;
 }
 body {
-    background: rgb(245, 151, 64);
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
 }
 #content {
     display: flex;
     width: 75%;
     background: lemonchiffon;
     justify-content: center;
+    margin: 0 auto ;
+    padding: 1em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .border-1 {
-    max-width: 300px;
-    border: 5px solid rgb(245, 83, 54);
+    min-width: 400px;
+    border: 5px groove var(--orange-border);
+    padding: 0em 2em 1em;
+    margin: 2em 0;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    background-color: var(--main-nav);
+}
+li {
+    list-style-type: none;
+}
+.tab-list {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    font-family: nav-font;
+    letter-spacing: 0.25em;
     
+}
+.tab-list li{
+    padding: 1em 2em;
+    margin: 0 1em;
+    background: var(--red);
+    color: var(--main-content);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.tab-list li:hover{
+    cursor:pointer;
+    background: var(--red-hover);
+}
+
+/* Menu */
+.item-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.menus {
+    align-content: center;
+}
+.item {
+    position: relative;
+    border: 2px solid var(--orange-border);
+    max-width: 400px;
+    height: 350px;
+    padding: 0.5em 2em;
+    margin: 1em auto;
+}
+.header-menu-ctg {
+    margin: 1em auto;
+    width: 700px;
+    text-align: center;
+    
+    border: 5px solid var(--orange-border);
+}
+.item img {
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
 }
